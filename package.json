@@ -1,0 +1,22 @@
+{
+  "name": "code-20210704-alexey-plodenko",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexeyPlodenko/code-20210704-alexey-plodenko.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexeyPlodenko/code-20210704-alexey-plodenko/issues"
+  },
+  "homepage": "https://github.com/AlexeyPlodenko/code-20210704-alexey-plodenko#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
