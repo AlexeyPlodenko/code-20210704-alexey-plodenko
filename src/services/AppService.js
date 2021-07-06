@@ -77,6 +77,7 @@ class AppService extends AbstractService {
                         err.message,
                         err.getStatus()
                     );
+                    return;
                 } else {
                     throw err;
                 }

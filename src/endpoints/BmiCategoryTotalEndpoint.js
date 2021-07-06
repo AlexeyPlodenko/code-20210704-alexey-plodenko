@@ -1,3 +1,4 @@
+const {BadRequestHttpError} = require('../errors/BadRequestHttpError');
 const {makeBmiRepositoryService} = require('../providers/BmiRepositoryServiceProvider');
 const {AbstractEndpoint} = require('./AbstractEndpoint');
 
@@ -13,7 +14,7 @@ class BmiCategoryTotalEndpoint extends AbstractEndpoint {
      * @returns {string}
      */
     path() {
-        return '/v1/bmi/category/total';
+        return '/v1/bmi/category/:category/total';
     }
 
     /**
@@ -22,17 +23,22 @@ class BmiCategoryTotalEndpoint extends AbstractEndpoint {
      * @returns {{}}
      */
     action(req, resp) {
-        const bmiRepository = makeBmiRepositoryService();
+        if (typeof req.params.category !== 'string') {
+            throw new BadRequestHttpError('Missing category.');
+        }
 
-        let overweightCount = 0;
+        const category = req.params.category;
+
+        const bmiRepository = makeBmiRepositoryService();
+        let count = 0;
         bmiRepository.each((item) => {
-            if (item.category === 'Overweight') {
-                overweightCount++;
+            if (item.category === category) {
+                count++;
             }
         });
 
         return {
-            overweightCount
+            count
         };
     }
 }

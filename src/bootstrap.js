@@ -19,6 +19,8 @@ function bootstrap() {
     app.setConfig(config[env]);
     app.registerEndpoints(endpoints);
     app.start();
+
+    return app;
 }
 
 module.exports = {

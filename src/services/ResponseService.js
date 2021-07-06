@@ -30,6 +30,7 @@ class ResponseService extends AbstractService {
      * @param {number} [status = 200]
      */
     send(data, status = 200) {
+        if (typeof data !== 'object') dump(data);
         assert(typeof data === 'object');
         assert(typeof status === 'number');
 

@@ -1,5 +1,5 @@
 function dump(...args) {
-    console.log(...args);
+    console.trace(...args);
     process.exit(1);
 }
 
