@@ -8,7 +8,6 @@ class AbstractService extends Abstract {
      */
     constructor() {
         super();
-
         assert(this.constructor.name !== 'AbstractService');
     }
 }

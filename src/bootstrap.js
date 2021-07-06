@@ -6,6 +6,9 @@ const config = {
     dev: require('../config/dev')
 };
 const {endpoints} = require('./endpoints/index');
+const {dump} = require('./helpers');
+
+global.dump = dump;
 
 function bootstrap() {
     const env = yargs.env ? yargs.env : 'dev';
